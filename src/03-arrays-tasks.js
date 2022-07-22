@@ -329,8 +329,12 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 1,2,3,4,5,6,7,8,9,10 ] => [ 10, 9, 8 ]
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
-function get3TopItems(/* arr */) {
-  throw new Error('Not implemented');
+function get3TopItems(arr) {
+  function desc(a, b) {
+    return b - a;
+  }
+  const descArr = arr.sort(desc);
+  return descArr.slice(0, 3);
 }
 
 /**
@@ -346,8 +350,15 @@ function get3TopItems(/* arr */) {
  *   [ null, 1, 'elephant' ] => 1
  *   [ 1, '2' ] => 1
  */
-function getPositivesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getPositivesCount(arr) {
+  // const positiveElements = arr.filter((item) => item > 0);
+  // return positiveElements.length;
+  if (arr.length === 0) {
+    return 0;
+  }
+  return arr
+    .filter((v) => Number.isInteger(v) && v > 0)
+    .sort((numb1, numb2) => numb2 - numb1)[0];
 }
 
 /**
@@ -379,8 +390,9 @@ function sortDigitNamesByNumericOrder(/* arr */) {
  *   [ -1, 1, -1, 1 ]      => 0
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
-function getItemsSum(/* arr */) {
-  throw new Error('Not implemented');
+function getItemsSum(arr) {
+  if (arr.length === 0) return 0;
+  return arr.reduce((acc, curr) => acc + curr);
 }
 
 /**
