@@ -92,13 +92,8 @@ function getArrayOfPositives(arr) {
  *    [ 'cat, 'dog', 'raccoon' ] => [ 'cat', 'dog', 'raccoon' ]
  */
 function getArrayOfStrings(arr) {
-  const strArr = [];
-  for (let i = 0; i < arr.length; i += 1) {
-    if (typeof arr[i] === 'string') {
-      strArr.push(arr[i]);
-    }
-  }
-  return strArr;
+  const res = arr.filter((ele) => typeof ele === 'string');
+  return res;
 }
 
 /**
@@ -115,13 +110,8 @@ function getArrayOfStrings(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
-  const newArr = [];
-  for (let i = 0; i < arr.length; i += 1) {
-    if (!arr[i] === false) {
-      newArr.push(arr[i]);
-    }
-  }
-  return newArr;
+  const res = arr.filter((ele) => !ele === false);
+  return res;
 }
 
 /**
@@ -154,11 +144,8 @@ function getUpperCaseStrings(arr) {
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
 function getStringsLength(arr) {
-  const newArr = [];
-  for (let i = 0; i < arr.length; i += 1) {
-    newArr.push(arr[i].length);
-  }
-  return newArr;
+  const res = arr.map((ele) => ele.length);
+  return res;
 }
 
 /**
@@ -279,12 +266,8 @@ function getMovingSum(arr) {
  * [ 'a', 'b', 'c' , null ]  => [ "b", null ]
  * [ "a" ] => []
  */
-function getSecondItems(arr) {
-  const newArr = [];
-  for (let i = 1; i < arr.length; i += 2) {
-    newArr.push(arr[i]);
-  }
-  return newArr;
+function getSecondItems(/* arr */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -301,14 +284,8 @@ function getSecondItems(arr) {
  *  [ 'a', 'b', 'c', null ] => [ 'a', 'b','b', 'c','c','c',  null,null,null,null ]
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
-function propagateItemsByPositionIndex(arr) {
-  const newArr = [];
-  for (let i = 0; i < arr.length; i += 1) {
-    for (let j = 0; j < i + 1; j += 1) {
-      newArr.push(arr[i]);
-    }
-  }
-  return newArr;
+function propagateItemsByPositionIndex(/* arr */) {
+  throw new Error('Not implemented');
 }
 
 /**
