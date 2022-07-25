@@ -82,8 +82,8 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,1,1   =>  false
  *   10,10,10 =>  true
  */
-function isTriangle(a, b, c) {
-  return a + b > c && a + c > b && b + c > a;
+function isTriangle(/* a, b, c */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -163,8 +163,14 @@ function isInsideCircle(/* circle, point */) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
+function findFirstSingleChar(str) {
+  for (let i = 0; i < str.length; i += 1) {
+    const j = str.charAt(i);
+    if (str.indexOf(j) === str.lastIndexOf(j)) {
+      return j;
+    }
+  }
+  return null;
 }
 
 /**
