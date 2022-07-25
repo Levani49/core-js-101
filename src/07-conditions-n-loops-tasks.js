@@ -163,14 +163,8 @@ function isInsideCircle(/* circle, point */) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(str) {
-  for (let i = 0; i < str.length; i += 1) {
-    const j = str.charAt(i);
-    if (str.indexOf(j) === str.lastIndexOf(j)) {
-      return j;
-    }
-  }
-  return null;
+function findFirstSingleChar(/* str */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -227,8 +221,8 @@ function reverseString(str) {
  *   87354 => 45378
  *   34143 => 34143
  */
-function reverseInteger(/* num */) {
-  throw new Error('Not implemented');
+function reverseInteger(num) {
+  return parseInt(num.toString().split('').reverse().join(''), 10);
 }
 
 /**
